@@ -29,16 +29,16 @@ public class PlayerController : NetworkBehaviour {
 	[Command]
 	void CmdFire()
 	{
-、
+
 		var bullet = Instantiate (bulletPrefab, bulletSpawn.position, bulletSpawn.rotation) as GameObject;
 
-、
+
 		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
 
-、
+
 		NetworkServer.Spawn(bullet);
 
-、
+
 		Destroy(bullet, 2.0f);
 	}
 
